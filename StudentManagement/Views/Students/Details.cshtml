@@ -1,0 +1,22 @@
+﻿@model Student
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">
+            <strong>Date of Birth:</strong> @Model.DOB.ToShortDateString() <br />
+            <strong>Contact:</strong> @Model.Contact <br />
+            <strong>Email:</strong> @Model.Email <br />
+            <strong>Enrollment Number:</strong> @Model.EnrollmentNumber <br />
+            <strong>Course:</strong> @Model.CourseName <br />
+            <strong>Created At:</strong> @Model.CreatedAt.ToString("g")
+        </p>
+        <a class="btn btn-primary" asp-action="Index">Back to List</a>
+    </div>
+</div>
