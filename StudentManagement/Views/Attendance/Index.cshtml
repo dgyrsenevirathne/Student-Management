@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Attendance>
+
+@{
+    ViewData["Title"] = "Attendance";
+}
+
+<h2>Attendance for @ViewBag.Date.ToString("dd/MM/yyyy")</h2>
+
+<p>
+    <a asp-action="MarkAttendance" class="btn btn-primary">Mark Attendance</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.StudentName</td>
+                <td>@(item.Status ? "Present" : "Absent")</td>
+            </tr>
+        }
+    </tbody>
+</table>

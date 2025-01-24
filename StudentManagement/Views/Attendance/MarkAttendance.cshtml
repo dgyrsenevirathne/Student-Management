@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Student>
+
+@{
+    ViewData["Title"] = "Mark Attendance";
+}
+
+<h2>Mark Attendance for @ViewBag.Date.ToString("dd/MM/yyyy")</h2>
+
+<form asp-action="MarkAttendance" method="post">
+    <input type="hidden" name="date" value="@ViewBag.Date.ToString("yyyy-MM-dd")" />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Attendance</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.Name</td>
+                    <td>
+                        <select name="studentAttendance[@student.Id]" class="form-control">
+                            <option value="true">Present</option>
+                            <option value="false">Absent</option>
+                        </select>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
