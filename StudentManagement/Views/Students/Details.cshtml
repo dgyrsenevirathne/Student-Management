@@ -4,11 +4,13 @@
     ViewData["Title"] = "Student Details";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h2 class="text-center my-4">@ViewData["Title"]</h2>
 
-<div class="card">
+<div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+        <h5 class="card-title mb-0">@Model.Name</h5>
+    </div>
     <div class="card-body">
-        <h5 class="card-title">@Model.Name</h5>
         <p class="card-text">
             <strong>Date of Birth:</strong> @Model.DOB.ToShortDateString() <br />
             <strong>Contact:</strong> @Model.Contact <br />
@@ -17,6 +19,21 @@
             <strong>Course:</strong> @Model.CourseName <br />
             <strong>Created At:</strong> @Model.CreatedAt.ToString("g")
         </p>
-        <a class="btn btn-primary" asp-action="Index">Back to List</a>
+        <a class="btn btn-primary mt-3" asp-action="Index">Back to List</a>
     </div>
 </div>
+
+<style>
+    .card {
+        border-radius: 10px;
+    }
+
+    .card-header {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .card-body {
+        font-size: 1.1rem;
+    }
+</style>

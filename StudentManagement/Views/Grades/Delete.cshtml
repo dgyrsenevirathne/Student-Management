@@ -1,0 +1,34 @@
+﻿@model StudentManagement.Models.Grade
+
+@{
+    ViewData["Title"] = "Delete Grade";
+}
+
+<h2>Delete Grade</h2>
+
+<div class="alert alert-danger">
+    <h4>Are you sure you want to delete this grade?</h4>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Student</dt>
+            <dd class="col-sm-9">@Model.StudentName</dd>
+
+            <dt class="col-sm-3">Course</dt>
+            <dd class="col-sm-9">@Model.CourseName</dd>
+
+            <dt class="col-sm-3">Grade</dt>
+            <dd class="col-sm-9">@Model.GradeValue</dd>
+        </dl>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <a asp-action="StudentGrades" asp-route-id="@Model.StudentId" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

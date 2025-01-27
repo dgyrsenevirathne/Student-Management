@@ -1,0 +1,38 @@
+﻿@model StudentManagement.Models.Grade
+
+@{
+    ViewData["Title"] = "Add Grade";
+}
+
+<h2>Add Grade for @ViewBag.StudentName</h2>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <input type="hidden" asp-for="StudentId" />
+
+    <div class="form-group mb-3">
+        <label asp-for="CourseId" class="control-label">Course</label>
+        <select asp-for="CourseId" class="form-control" asp-items="ViewBag.Courses">
+            <option value="">-- Select Course --</option>
+        </select>
+        <span asp-validation-for="CourseId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="GradeValue" class="control-label">Grade</label>
+        <input asp-for="GradeValue" class="form-control" />
+        <span asp-validation-for="GradeValue" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+        <a asp-action="StudentGrades" asp-route-id="@ViewBag.StudentId" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
