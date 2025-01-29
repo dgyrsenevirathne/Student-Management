@@ -7,6 +7,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<IAttendanceRepository, AttendanceRepository>();
 builder.Services.AddScoped<IGradeRepository, GradeRepository>();
+builder.Services.AddScoped<IAssignmentRepository, AssignmentRepository>();
 
 
 var app = builder.Build();
