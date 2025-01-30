@@ -1,6 +1,231 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<style>
+    :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3498db;
+        --accent-color: #e74c3c;
+        --text-color: #4a4a4a;
+    }
+
+    .privacy-container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+        color: var(--primary-color);
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        border-bottom: 3px solid var(--secondary-color);
+        padding-bottom: 0.5rem;
+        display: inline-block;
+    }
+
+    h2 {
+        color: var(--primary-color);
+        margin: 2rem 0 1.5rem;
+        padding-left: 1rem;
+        border-left: 4px solid var(--secondary-color);
+        font-size: 1.8rem;
+    }
+
+    p {
+        color: var(--text-color);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+    }
+
+    li {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+        position: relative;
+        transition: transform 0.3s ease;
+    }
+
+        li:hover {
+            transform: translateX(10px);
+            background: #f1f3f5;
+        }
+
+        li strong {
+            color: var(--secondary-color);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+    .contact-box {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        margin: 2rem 0;
+        border: 2px solid var(--secondary-color);
+    }
+
+        .contact-box h2 {
+            border: none;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+
+    .contact-email {
+        color: var(--accent-color);
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+    }
+
+        .contact-email:hover {
+            color: #c0392b;
+        }
+
+    .section-icon {
+        font-size: 1.5rem;
+        margin-right: 0.8rem;
+        color: var(--secondary-color);
+    }
+
+    .rights-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .right-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        border: 1px solid #e9ecef;
+        text-align: center;
+    }
+
+        .right-card h3 {
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+
+        .right-card p {
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+    @@media (max-width: 768px) {
+        .privacy-container {
+            margin: 1rem;
+            padding: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+
+<div class="privacy-container">
+    <h1><i class="fas fa-shield-alt section-icon"></i>@ViewData["Title"]</h1>
+
+    <p class="lead">Your privacy is paramount. This policy outlines our commitment to protecting your personal information within the Student Management System.</p>
+
+    <h2><i class="fas fa-info-circle section-icon"></i>Information We Collect</h2>
+    <ul>
+        <li>
+            <strong>Personal Information</strong>
+            Name, email address, phone number, and other contact details.
+        </li>
+        <li>
+            <strong>Student Information</strong>
+            Student names, grades, attendance records, and academic data.
+        </li>
+        <li>
+            <strong>Usage Data</strong>
+            System interaction details including login times and accessed features.
+        </li>
+    </ul>
+
+    <h2><i class="fas fa-cogs section-icon"></i>How We Use Your Information</h2>
+    <ul>
+        <li>Maintain and improve system functionality</li>
+        <li>Develop new features and enhancements</li>
+        <li>Provide user support and communications</li>
+        <li>Ensure system security and integrity</li>
+    </ul>
+
+    <h2><i class="fas fa-lock section-icon"></i>Security Measures</h2>
+    <div class="rights-grid">
+        <div class="right-card">
+            <i class="fas fa-database fa-2x" style="color: #27ae60;"></i>
+            <h3>Data Encryption</h3>
+            <p>Advanced encryption protocols for sensitive information</p>
+        </div>
+        <div class="right-card">
+            <i class="fas fa-user-shield fa-2x" style="color: #e74c3c;"></i>
+            <h3>Access Control</h3>
+            <p>Strict permission-based access system</p>
+        </div>
+        <div class="right-card">
+            <i class="fas fa-search fa-2x" style="color: #3498db;"></i>
+            <h3>Security Audits</h3>
+            <p>Regular system evaluations and updates</p>
+        </div>
+    </div>
+
+    <h2><i class="fas fa-share-square section-icon"></i>Information Sharing</h2>
+    <ul>
+        <li>With explicit user consent</li>
+        <li>For legal compliance requirements</li>
+        <li>To ensure community safety and rights protection</li>
+    </ul>
+
+    <h2><i class="fas fa-user-check section-icon"></i>Your Rights</h2>
+    <div class="rights-grid">
+        <div class="right-card">
+            <i class="fas fa-eye fa-2x" style="color: #2c3e50;"></i>
+            <h3>Access</h3>
+            <p>Review your stored personal data</p>
+        </div>
+        <div class="right-card">
+            <i class="fas fa-edit fa-2x" style="color: #f1c40f;"></i>
+            <h3>Correction</h3>
+            <p>Update inaccurate information</p>
+        </div>
+        <div class="right-card">
+            <i class="fas fa-trash-alt fa-2x" style="color: #e74c3c;"></i>
+            <h3>Deletion</h3>
+            <p>Request data removal</p>
+        </div>
+    </div>
+
+    <div class="contact-box">
+        <h2><i class="fas fa-envelope section-icon"></i>Contact Our Privacy Team</h2>
+        <a href="mailto:support@studentmanagement.com" class="contact-email">
+            support@studentmanagement.com
+        </a>
+        <p class="mt-3">We respond within 24 business hours</p>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
